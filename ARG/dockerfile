@@ -1,8 +1,9 @@
-FROM almalinux:9
+ARG version
+FROM almalinux:${version:-9}
 ENV course="Devops Aws" \
     trainer="Trinath" \
     duration="100HR"
-#RUN echo "Hello ${trainer}" > /tmp/devops.txt 
+#RUN echo "Hello ${trainer} image version: ${version}" > /tmp/devops.txt 
 ARG USERNAME=TrinathReddy
 RUN echo "Hello USER: ${USERNAME}" 
 CMD ["sleep", "100"]
